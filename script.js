@@ -30,7 +30,7 @@ const init = () => {
   current0El.textContent = 0;
 
   // buttons initial state
-  btnShoot.disabled = false;
+  btnShoot.disabled = true;
   btnNext.disabled = true;
 
   // active player class initial state
@@ -38,6 +38,8 @@ const init = () => {
   player1El.classList.remove('player--active');
   player0El.classList.remove('player--winner');
   player1El.classList.remove('player--winner');
+  player0El.classList.remove('player--looser');
+  player1El.classList.remove('player--looser');
 };
 
 const addElement = () => {
@@ -75,6 +77,7 @@ const switchPlayer = () => {
       roundSection.innerHTML = '';
 
       roundWinner.forEach((winner, i) => {
+        // to count number of round winner
         roundCounts[winner] = (roundCounts[winner] || 0) + 1;
 
         let winnerP1 = winner ? '<span>🔴</span>' : '<span>✔</span>';
@@ -83,18 +86,17 @@ const switchPlayer = () => {
         const roundsEl = document.createElement('div');
         roundsEl.classList.add('rounds');
         roundsEl.innerHTML = `<div class="rounds">
-    <h3>Round - ${i + 1}</h3> 
-    <div class="round-result">
-    ${winnerP1}
-    ${winnerP2}
-    </div>
-  </div>
-    `;
+                                <h3>Round - ${i + 1}</h3> 
+                                <div class="round-result">
+                                  ${winnerP1}
+                                  ${winnerP2}
+                                </div>
+                              </div>
+                                `;
 
         roundSection.appendChild(roundsEl);
       });
 
-      // to count number of round winner
       ({ 0: p1 = 0, 1: p2 = 0 } = roundCounts);
     }
 
@@ -111,11 +113,13 @@ const switchPlayer = () => {
 
   if (p1 === 3) {
     document.querySelector(`.player--0`).classList.add('player--winner');
+    document.querySelector(`.player--1`).classList.add('player--looser');
     btnNext.disabled = true;
     btnShoot.disabled = true;
   }
   if (p2 === 3) {
     document.querySelector(`.player--1`).classList.add('player--winner');
+    document.querySelector(`.player--0`).classList.add('player--looser');
     btnNext.disabled = true;
     btnShoot.disabled = true;
   }
@@ -143,4 +147,5 @@ btnNew.addEventListener('click', () => {
   addElement();
 
   init();
+  btnShoot.disabled = false;
 });

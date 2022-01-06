@@ -185,12 +185,25 @@ main {
 }
 
 .player--winner {
-  background-color: rgba(250, 255, 138, 0.9);
+  background-color: #ffffff;
 }
 
 .player--winner .name {
   font-weight: 700;
-  color: #c7365f;
+  color: rgb(36, 201, 30);
+}
+
+.player--looser {
+  background-color: rgb(0, 0, 0);
+}
+
+.player--looser .name {
+  font-weight: 700;
+  color: rgba(201, 30, 30, 0.4);
+}
+
+.player--looser .health {
+  color: rgba(201, 30, 30, 0.4);
 }
 
 .hidden {

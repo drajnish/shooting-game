@@ -206,6 +206,116 @@ main {
   color: rgba(201, 30, 30, 0.4);
 }
 
+.battle-field {
+  position: absolute;
+  top: 28rem;
+  transform: translateX(-50%);
+  width: 70rem;
+  height: 10rem;
+  left: 50%;
+  background-color: transparent;
+}
+
+.battle-ground {
+  position: relative;
+  top: 2rem;
+  width: 70rem;
+  height: 5rem;
+  background-color: transparent;
+}
+
+.tank {
+  position: absolute;
+  top: 1.5rem;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 2.5rem;
+  background-color: gray;
+  z-index: 10;
+}
+
+.tank--0 {
+  left: 11%;
+}
+
+.tank--1 {
+  right: 10%;
+}
+
+.head {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 1rem;
+  background-color: gray;
+  z-index: 10;
+}
+
+.head--0 {
+  top: 2.1rem;
+  left: 14%;
+}
+
+.head--1 {
+  top: 2.1rem;
+  right: 16%;
+}
+
+.foot {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 1.2rem;
+  height: 0.6rem;
+  background-color: gray;
+  z-index: 10;
+}
+
+.foot--0--left {
+  top: 0.8rem;
+  left: 11%;
+}
+
+.foot--0--right {
+  top: 4.1rem;
+  left: 11%;
+}
+
+.foot--1--left {
+  top: 0.8rem;
+  right: 14%;
+}
+
+.foot--1--right {
+  top: 4.1rem;
+  right: 14%;
+}
+
+.bullet {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 2rem;
+  width: 1rem;
+  height: 0.9rem;
+  background-color: rgb(218, 165, 32);
+  border-radius: 50%;
+}
+
+.bullet--0 {
+  left: 13%;
+}
+
+.bullet--1 {
+  right: 16%;
+}
+
+.tank--winner {
+  background-color: rgb(218, 165, 32);
+}
+
+.tank--looser {
+  background-color: rgba(201, 30, 30, 0.4);
+}
+
 .hidden {
   display: none;
 }
